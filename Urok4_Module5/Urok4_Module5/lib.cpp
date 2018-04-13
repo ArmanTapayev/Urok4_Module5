@@ -288,7 +288,7 @@ void minArray(int *arr, int *row, int *col, int *min, int *minIndRow, int *minIn
 			if (*(arr + i * *row + j) < *min)
 			{
 				*min = *(arr + i * *row + j);
-				*minIndRow = i;
+				*minIndRow = i * *row;
 				*minIndCol = j;
 			}
 			
@@ -307,7 +307,7 @@ void minArray(int *arr, int *row, int *col, float *min, int *minIndRow, int *min
 			if (*(arr + i * *row + j) < *min)
 			{
 				*min = *(arr + i * *row + j);
-				*minIndRow = i;
+				*minIndRow = i * *row;
 				*minIndCol = j;
 			}
 
@@ -326,7 +326,7 @@ void minArray(int *arr, int *row, int *col, double *min, int *minIndRow, int *mi
 			if (*(arr + i * *row + j) < *min)
 			{
 				*min = *(arr + i * *row + j);
-				*minIndRow = i;
+				*minIndRow = i * *row;
 				*minIndCol = j;
 			}
 
@@ -365,7 +365,7 @@ void maxArray(float *arr, int *row, int *col, float *max, float *maxIndRow, floa
 			if (*(arr + i * *row + j) > *max)
 			{
 				*max = *(arr + i * *row + j);
-				*maxIndRow = i;
+				*maxIndRow = i * *row;
 				*maxIndCol = j;
 			}
 
@@ -384,7 +384,7 @@ void maxArray(double *arr, int *row, int *col, double *max, double *maxIndRow, d
 			if (*(arr + i * *row + j) > *max)
 			{
 				*max = *(arr + i * *row + j);
-				*maxIndRow = i;
+				*maxIndRow = i * *row;
 				*maxIndCol = j;
 			}
 

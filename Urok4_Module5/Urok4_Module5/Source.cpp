@@ -248,7 +248,7 @@ void main()
 
 				minArray(arr, &row, &col, &minElement, &minIndRow, &minIndCol);
 
-				printf("Первый наименьший элемент массива: min[ %d, %d] = %d\n", minIndRow+1, minIndCol+1, minElement);
+				printf("Наименьший элемент массива: min[ %d, %d] = %d\n", minIndRow, minIndCol, minElement);
 
 				free(arr);
 
