@@ -21,9 +21,13 @@ void main()
 				/*1. Дано целое число в двоичной системе счисления, т.е. последовательность цифр  0 и 1. 
 				Составить программу перевода этого числа в восьмеричную систему счисления.*/
 
+				long long binNum;
+				int octNum;
 
-		
-				//free(arr);
+				printf("Введите двоичное число: ");
+				scanf("%lld", &binNum);
+
+				printf("%lld (двоичное) = %d (восьмиричное)\n", binNum, BinaryOctal(binNum));
 
 				system("pause");
 				system("cls");
@@ -34,12 +38,22 @@ void main()
 			{
 				/*2. Ввести два массива действительных чисел, состоящих из 7 и 9 элементов. 
 				Сформировать третий массив из упорядоченных по убыванию значений обоих массивов.*/
+				int N1=7, N2=9, stub = 1;
+				double minElem = -20, maxElem = 50;
 
+				printf("Формируем первый массив из %d вещественных чисел.\n", N1);
+				double *arr1 = GetMemoryVectD(&N1); // подготавливаем одномерный массив из 7 элементов
+				fillArray(arr1, &stub, &N1, &minElem, &maxElem);
+				printArray(arr1, &stub, &N1);
+
+				printf("Формируем второй массив из %d вещественных чисел.\n", N2);
+				double *arr2 = GetMemoryVectD(&N2); // подготавливаем одномерный массив из 7 элементов
+				fillArray(arr2, &stub, &N2, &minElem, &maxElem);
+				printArray(arr2, &stub, &N2);
 			
-
-				/*free(arr);
-				free(vecPos);
-				free(vecNeg);*/
+				task2(arr1, arr2, &N1, &N2);
+				free(arr1);
+				free(arr2);
 
 				system("pause");
 				system("cls");
@@ -70,9 +84,51 @@ void main()
 				геометрическую прогрессию. Если «да» – вывести знаменатель прогрессии, 
 				если «нет» – ответ «не образуют». */
 
+				int stub = 1;
+				float q = 1;
+				int *arr = NULL;
+				arr = (int*)calloc(1, sizeof(int));
+				int N = 1;
+				printf("Для формирования массива введите произвольное число целых чисел.\n");
+				printf("Для завершения ввода наберите \'+\'\n");
+				do
+				{
+					printf("Введите число: ");
+					if (scanf("%d", (arr + N - 1)) == true)
+					{
+						N++;
+						arr = (int*)realloc(arr, sizeof(int)*(N + 1));
+					}
+					else
+						break;
 
+				} while (true);
 
-				//free(arr);
+				N--;
+				printf("Сформированный массив: \n");
+				printArray(arr, &stub, &N);
+
+				int flag = 1;
+				q = *(arr + 1)/(*arr);
+				for (int i = 1; i < N; i++)
+				{
+					if ((float)(*(arr + i)/(*(arr + i-1)))!=q)
+						flag = 0;
+						
+						//printf("i = %d, arr = %d\n", i-1, *(arr+i-1));
+						//printf("i = %d, arr = %d\n", i, *(arr + i));
+						//printf("i = %d, (*arr + i) / (*arr + i - 1) = %f\n", i, (float)(*(arr + i) / (*(arr + i - 1))));
+
+				}
+				if (flag)
+				{ 
+					printf("Значения элементов образуют геометрическую прогрессию.\n");
+					printf("Знаменатель прогрессии q = %f\n", q);
+				}
+				else
+					printf("Значения элементов не образуют геометрическую прогрессию.\n");
+						
+				free(arr);
 
 				system("pause");
 				system("cls");
@@ -84,9 +140,15 @@ void main()
 				/*5. Отсортировать по убыванию элементов последнего столбца целочисленный 
 				двухмерный массив 5×4*/
 
-	
+				int row = 0, col = 0, minElem = 0, maxElem = 50, stub = 1, minElement, minIndRow, minIndCol;
+				printf("Формируем двумерный массив размерностью 4 х 5 элементов.\n");
+				int *arr = GetMemory(&row, &col);
+				fillArray(arr, &row, &col, &minElem, &maxElem);
+				printArray(arr, &row, &col);
 
-				//free(arr);
+				task5(arr, &row, &col);
+
+				free(arr);
 
 				system("pause");
 				system("cls");
@@ -98,9 +160,15 @@ void main()
 				/*6. В матрице А(3-строки,4-столбца) поменять местами наименьшие элементы в 
 				первой и третей строке.*/
 
-		
+				int row = 0, col = 0, minElem = 0, maxElem = 50, stub = 1, minElement, minIndRow, minIndCol;
+				printf("Формируем двумерный массив размерностью 3 х 4 элементов.\n");
+				int *arr = GetMemory(&row, &col);
+				fillArray(arr, &row, &col, &minElem, &maxElem);
+				printArray(arr, &row, &col);
 
-				//free(arr);
+				task6(arr, &row, &col);
+				
+				free(arr);
 
 				system("pause");
 				system("cls");

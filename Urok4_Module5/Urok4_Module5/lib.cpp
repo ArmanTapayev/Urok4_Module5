@@ -472,6 +472,40 @@ void bubbleSort(int *arr, int *len)
 	}
 }
 
+/* —ортировка убыванием */
+void bubbleSortDesc(int *arr, int *len)
+{
+	for (int i = 0; i < (*len - 1); i++)
+	{
+		for (int j = (*len - 1); j > i; j--)
+		{
+			if (*(arr + j - 1) < *(arr + j))
+			{
+				int temp = *(arr + j - 1);
+				*(arr + j - 1) = *(arr + j);
+				*(arr + j) = temp;
+			}
+		}
+	}
+}
+
+/* —ортировка убыванием */
+void bubbleSortDesc(double *arr, int *len)
+{
+	for (int i = 0; i < (*len - 1); i++)
+	{
+		for (int j = (*len - 1); j > i; j--)
+		{
+			if (*(arr + j - 1) < *(arr + j))
+			{
+				double temp = *(arr + j - 1);
+				*(arr + j - 1) = *(arr + j);
+				*(arr + j) = temp;
+			}
+		}
+	}
+}
+
 /* —ортировка одномерного массива целых чисел методом пузырька.*/
 void bubbleSort(float *arr, int *len)
 {
@@ -867,4 +901,24 @@ int oddElemArray(int *arr, int *row, int *col)
 		}
 	}
 	return count;
+}
+
+/* перевод двоичных чисел в восьмиричные */
+int BinaryOctal(long long binNum)
+{
+	int octNum = 0, decNum = 0, i = 0;
+	while (binNum!=0)
+	{
+		decNum += (binNum % 10)*pow(2, i);
+		i++;
+		binNum /= 10;
+	}
+	i = 1;
+	while (decNum != 0)
+	{
+		octNum += (decNum % 8)*i;
+		decNum /= 8;
+		i *= 10;
+	}
+	return octNum;
 }

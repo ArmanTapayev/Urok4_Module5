@@ -27,6 +27,8 @@ void searchNumber(double *arr, int *len, double *srcNum);
 void bubbleSort(int *arr, int *len);
 void bubbleSort(float *arr, int *len);
 void bubbleSort(double *arr, int *len);
+void bubbleSortDesc(int *arr, int *len);
+void bubbleSortDesc(double *arr, int *len);
 double averArray(int *arr, int *len);
 double averArray(float *arr, int *len);
 double averArray(double *arr, int *len);
@@ -52,7 +54,11 @@ int evenElemVect(int *arr, int *len);
 int evenElemArray(int *arr, int *row, int *col);
 int oddElemVect(int *arr, int *len);
 int oddElemArray(int *arr, int *row, int *col);
+int BinaryOctal(long long binNum);
 
+void task2(double *arr1, double *arr2, int *len1, int *len2);
+void task5(int *arr, int *row, int *col);
+void task6(int *arr, int *row, int *col);
 void task7(int *arr, int *row, int *col);
 int task9(int *arr, int *row, int *col);
 
